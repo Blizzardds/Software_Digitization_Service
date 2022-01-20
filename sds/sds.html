@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" media="all">
+    <title>SDS</title>
+</head>
+<body>
+    <div class="box">
+        <div class="toc"><strong>Table of Contents</strong></div>
+        <ul>
+            <li><a href="#1">1. Introduction</a></li>
+            <li><a href="#1.1">1.1 Purpose</a></li>
+            <li><a href="#1.2">1.2 Document Conventions</a></li>
+            <li><a href="#1.3">1.3 Intended Audience and Reading Suggestions</a></li>
+            <li><a href="#2">2. Architectural Design Pattern</a></li>
+            <li><a href="#3">3. Description of Design Components</a></li>
+            <li><a href="#3.1">3.1. Server Side</a></li>
+            <li><a href="#3.2">3.2. Client Side</a></li>
+            <li><a href="#4">4. High-Level Component Design</a></li>
+            <li><a href="#5">5. Class diagrams</a></li>
+            <li><a href="#5.1">5.1 Detailed Class Diagram(s)</a></li>
+            <li><a href="#5.2">5.2 Detailed Class Description(s) </a></li>
+            <li><a href="#6">6. Sequence Diagrams</a></li>
+            <li><a href="#7">7. Database Design</a></li>
+            <li><a href="#8">8. Implementation plan</a></li>
+        </ul>
+    </div>
+    <div class="tableofcontents">
+        <h1>Table of contents</h1>
+        <h3><a href="#1">1. Introduction</a></h3>
+         <ul>
+             <li><a href="#1.1">1.1 Purpose</a></li><br>
+             <li><a href="#1.2">1.2 Document Conventions</a></li><br>
+             <li><a href="#1.3">1.3 Intended Audience and Reading Suggestions</a></li>
+            
+         </ul>
+         <h3><a href="#2">2. Architectural Design Pattern</a></h3><br>
+         <h3><a href="#3">3. Description of Design Components</a></h3>
+         <ul>
+             <li><a href="#3.1">3.1. Server Side</a></li><br>
+             <li><a href="#3.2">3.2. Client Side</a></li>
+         </ul>
+         <h3><a href="#4">4. High-Level Component Design</a></h3><br>
+         <h3><a href="#5">5. Class diagrams</a></h3>
+         <ul>
+             <li><a href="#5.1">5.1 Detailed Class Diagram(s)</a></li><br>
+             <li><a href="#5.2">5.2 Detailed Class Description(s) </a></li>
+             
+         </ul>
+         <h3><a href="#6">6. Sequence Diagrams</a></h3><br>
+         <h3><a href="#7">7. Database Design</a></h3><br>
+         <h3><a href="#8">8. Implementation plan</a></h3>
+        
+    </div>
+    <div class="mainheader">
+        <button id="printbutton" onclick="window.print()">Print</button>
+        <br>
+        <h1>
+            <div class="sds1">Software Design</div>
+            <div class="sds2">Specification</div>
+        </h1>
+        <h2> 
+        <div class="for">for</div>
+        </h2>
+        <h1>    
+        <div class="project">Document Digitization Service</div>
+        </h1>
+        <h3>    
+        <div class="prepared">prepared by Group-5</div> <br>
+        </h3>
+    </div>
+    <br><br><br>
+    <div class="content">
+        <br><h2 id="1">1. Introduction</h2>
+        <h3 id="1.1">1.1 Purpose</h3>
+        <p>This software design specification is made with the purpose of laying out the software architecture and design of the Document 
+            Digitization Service in detail with all the data, architectural, interface and component level designs. 
+            The document will render the developers an insight in meeting client’s needs effectively and efficiently. 
+            Moreover the document facilitates communication and understanding of the system by providing several views 
+            of the system design. 
+        </p>
+        <h3 id="1.2">1.2 Document Conventions</h3>
+        <p>The document maintained the typical document conventions with the main topics being 
+            bold and have a font size of 30 then sub-topics are 
+            bold also with the smaller font size of 20 than the main topic. 
+            The sub topics are numbered with main topic number as a 
+            prefix such as for 1st main topic the sub topics are prefixes as 1.1,1.2,1.3 and so on.
+        </p>
+        <h3 id="1.3">1.3. Intended Audience and Reading Suggestions</h3>
+        <p>The intended audience of this software design specification or SDS are the project managers and developers of 
+            the document digitization service as it will serve as the instruction for all the development requirements. 
+            There will be several technical terminologies and diagrams so it would be wise for the readers to gain the
+             knowledge about the topics that will be use here in sds.  
+            </p>
+        <h3 id="2">2 Architectural Design Pattern</h3>
+        <p>The ‘Document Digitization Service’ application, both mobile app and web app, will be using 
+            the Model View Template (MVT) software design architecture. 
+            The entire design has broke down into three components   and each component has a specific purpose:
+        </p>
+        <ul>
+            <li> <strong>Model:</strong> Model acts as an interface for our data and is basically the logical structure 
+                behind the entire web application which is represented by a database here we will be using MySql.
+            </li>
+            <li> <strong>View: </strong>View executes the business logic and 
+                interacts with the Model and renders the template. It accepts HTTP requests 
+                and then returns HTTP responses.
+            </li>
+            <li><strong>Templates: </strong>Templates are used to specify a structure for an output. 
+                Data can be populated in a template using placeholders. It defines how the data is presented. 
+                An example is a Generic list view that we can use to display a set of records from the database
+            </li>
+        </ul>
+        <p>Advantages of using MVT:</p>
+        <ul>
+            <li>
+                Less coupled.
+            </li>
+            <li>
+                Suitable for small to large-scale applications.
+            </li>
+            <li>
+                Easy to Modify.
+            </li>
+        </ul>
+        <h3>MVT Architecture Pattern</h3>
+        <img src="images/MVT.png" alt="MVT">
+    <br>
+    <h3 id="3">3 Description of Design Components</h3>
+    <p>
+        The entire design can be broken down into two components one is server side and another is client side. 
+    </p>
+    <h4 id="3.1">3.1 Server Side:</h4>
+    <p>
+        The whole server will taken care of the following ways:
+        <ol>
+            <li>
+                Security System: The users will have all the security measurements so that they can safely use our system 
+            without being exposed to anyone so much easily. In addition they can secure their file and folder by the lock feature 
+            so that without a password
+            the user himself/herself can’t access his/her locked file and folders. In addition the system 
+            has some policy for brute force attacks.
+            <ul>
+                <li>
+                    If a user remains idle for 15 minutes then the user will be automatically logged out.
+                </li>
+                <li>
+                    After consecutive 3 failed login attempts the system will block the account of the user.
+                </li>
+                <li>
+                    Reset password would be done by the assigned administrator using the administration panel.
+                </li>
+                <li>
+                    Only alphanumeric keys are allowed in the username and password field.
+                </li>
+            </ul>
+            </li>
+            <li>
+                Backup System: The administrators can take the backup of the system 
+                so that any unexpected situation can be handled without losing the data.
+            </li>
+            <li>
+                Recovery System: From the backuped system the system can be recover at any time.
+            </li>
+            <li>
+                Maintenance and Technical Support: The system would have a better Maintenance and Technical Support policy.
+            </li>
+            <li>
+                Capabilities: The system would be capable of uploading a sing and bulk files and can store approximately 3.5 million files
+            </li>
+            <li>
+                Notification management: The system would be able to send notification to the user for any 
+                kind of modification, update and request access with following 2 condition as well:
+                <ul>
+                    <li>
+                        The system should be capable to send email notification in every
+                        routed task.
+                    </li>
+                    <li>
+                        The system should be capable view real-time notifications in the dashboard
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Reports Management:
+                <ul>
+                    <li>
+                        The system should be capable of counting all the uploaded records by folder or user.
+                    </li>
+                    <li>
+                        The system should be capable of counting all the pages in every record uploaded.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Search and Retrieval Management: 
+                <ul>
+                    <li>
+                        The system should be capable of searching data 
+                        such as index, file name, date, author name, uploader name, 
+                        document type and content of the scanned document.
+                    </li>
+                    <li>
+                        The system should have an advanced content search that can search optical character recognition (ocr) 
+                        of the scanned documents.
+                    </li>
+                    <li>
+                        The system should have a filtering in search result to easily track the documents.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </p>
+    <h4 id="3.2">3.2 Client Side:</h4>
+    <p>
+        By this the client should be able to visit
+         through different platforms like web and android.but whenever the client visits they see the same things and same functionalities.
+         <ol>
+             <li>
+                Login: At first the user sees the login page.where they have to put their username and password .if the information matches with the database then see her own dashboard.if user has not
+                 been registered yet he will see the message that you are not registered yet..And the user can also log in through Googl
+             </li>
+             
+             <li>
+
+                Registration: The registration of a user can only be done by the administrator.
+             </li>
+         </ol>
+         <img src="images/1.jpg" alt="1">
+             <img src="images/2.jpg" alt="2">
+             <img src="images/3.jpg" alt="3">
+    </p>
+    <br><br>
+    <h2 id="4">4. High level component Design</h2>
+    <img src="images/High Level Component Design.png" alt="HLCD">
+    <br><br>
+    <h2 id="5">5. Class Diagrams</h2>
+     <h2 id="5.1">5.1 Detailed Class Diagram</h2>
+        <br>
+        <img src="images/UML.png" alt="UML Class Diagram">
+     <h2 id="5.2">5.2 Detailed Class Description</h2> 
+        <p>The following tables explain the type, purpose, function(s), description of each of the classes of Document Digitization application:</p>
+       <br>  <h3> <strong>Detailed Class Diagram(s): user</strong> </h3>
+       <table border="2" cellspacing="1">
+           <tr>
+        <th>Class Name       </th>
+        <th>User</th>
+           </tr>
+        <tr>
+            <td> Type</td>
+            <td>Abstract class</td>
+            
+        </tr>
+        <tr>
+            <td>purpose</td>
+            <td>This class contains the information of users.</td>
+        </tr>
+        <tr>
+            <td>Function</td>
+            <td>It controls each user's profile implementation.example: +fname: String,+lname: String,+email: String,+totalUpload: int,<br>
+                +gender: String,+contactNo: int,+getInfo: etc.</td>
+        </tr>
+         <tr>
+             <td>Description</td>
+             <td>Employees and Admin are the subordinates of this class.</td>
+         </tr>
+       </table>
+       <br>
+       <h3> <strong>Detailed Class Diagram(s):Authentication </strong> </h3>
+       <table border="2" cellspacing="1">
+       <th>Class Name       </th>
+        <th>Authentication</th>
+           <tr>
+        <td>type</td>
+        <td>Associated Class</td>
+           </tr>
+           <tr>
+               <td>purpose</td>
+               <td>the process or action of verifying the identity of a user or process.the implementation of this class will grant user access <br>
+                to the app for further usability</td>
+           </tr>
+           <tr>
+            <td>function</td>
+            <td>It controls each account varifications +isValidUser: boolean,+authenticateUser():,+getRole():</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                authenticate server where the information is compared with all the user credentials on file. When a match is found, the system will<br>
+                 authenticate users and grant them access to their accounts.
+                
+                </td>
+        </tr>
+    </table>
+        
+        
+       
+       <h3><strong>Detailed Class Diagram(s):Admin Action</strong></h3>
+       <table border="2" cellpadding="1">
+           <th>Class name            </th>
+           <th>admin action</th>
+           <tr>
+            <td>type</td>
+            <td>Abstract Class</td>
+        </tr>
+        <tr>
+            <td>purpose</td>
+            <td>admin can authorize the employees accounts.they have accses to create any account ,delete any user account and make  recovery to the <br>
+                user account.</td>
+        </tr>
+        <tr>
+            <td>function</td>
+            <td>It controls following functions :+getInfo(),+createAccount(),+getAccountInfo(),
+                +makeRecovery():
+                </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>This class has Make Recovery,Create Account,create backup,assign user role,reset user password named sub classes.</td>
+        </tr>
+       </table>
+       <h3><strong>Detailed Class Diagram(s):features</strong></h3>
+       <table border="2" cellpadding="3">
+           <th>Class Name</th>
+           <th>Feature</th>
+           <tr>
+               <td>type</td>
+               <td>Abstract Class</td>
+           </tr>
+           <tr>
+            <td>purpose</td>
+            <td>This class characteristics, Archives function, contain primary source documents that have accumulated,lock features that keep safe<br> 
+                important documents and controls assigned roles by the admin.</td>
+        </tr>
+        <tr>
+            <td>function</td>
+            <td>it supervise following functions :+locked: boolean,+totalLocked: int,+getarchiveFileInfo():,+getRole():</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>This class has lock feature ,archiving feature, various role of users abilities by admin</td>
+        </tr>
+
+       </table>
+       <h3><strong>Detailed Class Diagram(s):User action</strong></h3>
+       <table border="2" cellpadding="3">
+           <th>Class Name</th>
+           <th>User action</th>
+           <tr>
+               <td>type</td>
+               <td>Abstract Class</td>
+           </tr>
+           <tr>
+            <td>purpose</td>
+            <td>user action is a task or workflow that a user can complete while processing a case. By choosing which actions are relevant to his case.<br>
+                in the website we have multiple actions the user can perfrom.</td>
+        </tr>
+        <tr>
+            <td>function</td>
+            <td>it supervises +getUserInfo(): and its subclass functions</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>This class can perform these sub class actions: Modify File,Delete File,Edit File,Create Folder,Modify Folder,Lock Folder,Archive action,<br>
+                Upload File,Create Group,Modify Account,Search files</td>
+        </tr>
+        
+       </table>
+       <h3><strong>Detailed Class Diagram(s):Notification</strong></h3>
+       <table border="2" cellpadding="3">
+           <th>Class Name</th>
+           <th>Notification</th>
+           <tr>
+               <td>type</td>
+               <td>Abstract Class</td>
+           </tr>
+           <tr>
+            <td>purpose</td>
+            <td>it notifies when the admin assigns any work or group work to the user,reminder for uploading file,and communicate with other timely <br>
+                information from our app. </td>
+        </tr>
+        <tr>
+            <td>function</td>
+            <td>
+                Email Notification :+realtime: boolean<br>
+                Real-time Notification:+realtime: boolean
+                
+                
+                
+                </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>Users can tap the notification to open your app or take an action directly from the notification.this class has two sub class real time <br>
+                 notification and email access notification.</td>
+        </tr>
+        
+       </table>
+            <h3><strong>Detailed Class Diagram(s):Folder</strong></h3>
+            <table border="2" cellpadding="3">
+                <th>Class Name</th>
+                <th>Folder</th>
+                <tr>
+                    <td>type</td>
+                    <td>Super class</td>
+                </tr>
+                <tr>
+                    <td>purpose</td>
+                    <td> a virtual container within a digital file system, in which groups of files and other folders can be kept and organized.</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>This class comprises the data type :+nameOfFolder(): String</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>This class has a Public Folder,a Private Folder subclass.public folder is shared with all users themselves.on the other hand<br>
+                        private folder,shared with restricted users only.Added “master password” to prevent others from viewing/changing your rules</td>
+                </tr>
+                
+            </table>
+                    <td><h3><strong>Detailed Class Diagram(s):Search</strong></h3>
+                        <table border="2" cellpadding="3">
+                            <th>Class Name</th>
+                            <th>Search</th>
+                            <tr>
+                                <td>type</td>
+                                <td>Super class</td>
+                            </tr>
+                            <tr>
+                            <td>purpose</td>
+                            <td>It helps users find what they need on the website. Add a customizable search box to our web pages and show fast, <br>
+                                relevant results powered by this system.</td>
+                        </tr>
+                        <tr>
+                            <td>function</td>
+                            <td>This class will be implement the following data type <br>
+                                :+keywords: String
+                                +keyWordsFound: boolean
+                                +searchResults: int
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>This class implies OCR search and General search.optical character recognition, allows us to transform a scan or photograph of a letter or court filing into searchable,<br>
+                                sortable text that we can search easily.
+                                </td>
+                        </tr>
+                        
+                        </table>
+                
+            <h3><strong>Detailed Class Diagram(s):Account</strong></h3>
+            <table border="2" cellpadding="3">
+                <th>Class Name</th>
+                <th>Account</th>
+                <tr>
+                    <td>type</td>
+                    <td>Super class</td>
+                </tr>
+                <tr>
+                    <td>purpose</td>
+                    <td>An account is a record in an accounting system that tracks the financial activities of a specific asset, the user implementation activities.</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>This class comprises the functions +getUserInfo(): also has subclass function :-getpassword():,+setPassword():,+setAvatar():</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Account Description can be established for each unique activities  combination.account class have account creation subclass,account modification subclass.</td>
+                </tr>
+                
+            </table>
+
+            <h3><strong>Detailed Class Diagram(s): File</strong></h3>
+            <table border="2" cellpadding="3">
+                <th>Class Name</th>
+                <th>File</th>
+                <tr>
+                    <td>type</td>
+                    <td>Super class</td>
+                </tr>
+                <tr>
+                    <td>purpose</td>
+                    <td>File is a free, secure tool that helps you find files faster, manage files easily, and share them offline with others.</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>This class will be implement the following functions :  +getFileInfo(): <br>
+                        and the data type are +fileName: String,+fileSize: String
+                        +dateCreated: String,+lastModified: String.
+                        </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>It supports various types of features: quick search, moving, deleting, opening, and sharing files, as well as renaming, unzipping,<br>
+                        and copy-paste.Files also recognizes multiple file formats, including music, videos, images, documents</td>
+                </tr>
+                
+            </table>
+
+            <h3><strong>Detailed Class Diagram(s):Repository</strong></h3>
+            <table border="2" cellpadding="3">
+                <th>Class Name</th>
+                <th>Repository</th>
+                <tr>
+                    <td>type</td>
+                    <td>Super class</td>
+                </tr>
+                <tr>
+                    <td>purpose</td>
+                    <td>There are two repositories called public and private repositories. So that these can be used publicly and privately.</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>This class will be implement the following data type: <br>
+                        +private: boolean
+                        +private: boolean
+                        </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>There should be a parent class called repository and two child classes called public repository and private repository.</td>
+                </tr>
+                
+            </table>
+
+            <h3><strong>Detailed Class Diagram(s):Backup</strong></h3>
+            <table border="2" cellpadding="3">
+                <th>Class Name</th>
+                <th>Backup</th>
+                <tr>
+                    <td>type</td>
+                    <td>Single Class</td>
+                </tr>
+                <tr>
+                    <td>purpose</td>
+                    <td>Backup restore uses accessibility services to improve deleted file or folder.Restore, Transfer ours Apps and Personal data,<br>
+                        confidential file save to lose</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>This class contains +getSystemInfo(): functions.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Backup feature Restore or transfer files of apps that are not frequently used to save storage of phone. Easiest Backup
+                        <br>
+                        Personal data for safety. iCloud Backup for data security. </td>
+                </tr>
+                
+            </table>
+            <h3><strong>Detailed Class Diagram(s):Group</strong></h3>
+            <table border="2" cellpadding="3">
+                <th>Class Name</th>
+                <th>Group</th>
+                <tr>
+                    <td>type</td>
+                    <td>Single Class</td>
+                </tr>
+                <tr>
+                    <td>purpose</td>
+                    <td>To do a specific work, members need to work grouply. So, the admin can create a group for that members and they can do the work group wise.</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>This class will be implement the following data type:<br>
+                    +groupId: int<br>
+                    +groupName: String<br>
+                    +setGroupInfo():<br>
+                    +getGroupInfo():<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Admin can create a group for group members so that the members can work on any cases group wise. The members can add or remove <br>
+                        files, create files etc.</td>
+                </tr>
+            </table>
+
+            
+            <h3><strong>Detailed Class Diagram(s):Recovery</strong></h3>
+            <table border="2" cellpadding="3">
+                <th>Class Name</th>
+                <th>Recovery</th>
+                <tr>
+                    <td>type</td>
+                    <td>Single Class</td>
+                </tr>
+                <tr>
+                    <td>purpose</td>
+                    <td>If any file is deleted, then this will be applicable to recover the file</td>
+                </tr>
+                <tr>
+                    <td>function</td>
+                    <td>This class contains following functions :<br>
+                        +getSystemInfo():<br>
+                        +getBackupInfo():
+                        </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>If any file is deleted,then it can be recovered by admin action.this class is under the dashboard class.</td>
+                </tr>
+                
+            </table>
+            
+            <h3 id="6">6. Sequential Diagram</h3>
+            <img src="images/sec_dia_01.PNG" alt="">
+            <img src="images/sec_dia_02.PNG" alt="">
+            <img src="images/sec_dia_03.PNG" alt="">
+            <h3 id="7">7. Databae Design ER Diagram</h3>
+            <img src="images/First_ER_DDS_SDS.png" alt="">
+
+
+            <h3 id="8">8. Implementation Plan</h3>
+            <p> At first we will build UI for both  the mobile app  and web app. Muhtasin Mashrur Adit will work on the web app’s UI and Tamalika
+            Bakshi will work on the mobile app’s UI. Then the system will be developed by the django framework  and python with a relational
+            database here we will be using mysql. The system will be designed by MD. ABU AMMAR. The web app and mobile app both would be connected
+            to the same system. The web app would be connected to the system by the django framework itself and the mobile app would be connected 
+            to the system via rest API which would be designed by Muhtasin Mashrur Adit. Any third party system can access the system via API after
+            get authenticated by authentication API. This part of the design would be managed by Tamalika Bakshi again.</p>
+       
+     </div>
+</body>
+</html>

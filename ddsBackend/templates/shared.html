@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shared Files and Folders</title>
+    <link rel="stylesheet" href="{% static 'css/shared.css' %}">
+</head>
+<body class="body">
+    <div class="leftpart">
+        <div class="name"><h2><a href="/dds/ddsHome">Document <br>Digitization</a></h2></div>
+        <div class="home">
+            <h3><a href="/dds/ddsHome">
+                <img src="{% static 'images/home.png' %}" alt="home">
+                Home
+            </a></h3>
+        </div>
+        <div class="recent">
+            <h3><a href="/dds/recent">
+                <img src="{% static 'images/recent.png' %}" alt="recent">
+                Recent
+            </a></h3>
+        </div>
+        <div class="myfiles">
+            <h3><a href="/dds/myfiles">
+                <img src="{% static 'images/myfiles.png' %}" alt="myfiles">
+                My Files
+            </a></h3>
+        </div>
+        <div class="trash">
+            <h3><a href="/dds/trash">
+                <img src="{% static 'images/trash.png' %}" alt="trash">
+                Trash
+            </a></h3>
+        </div>
+        <div class="shared">
+            <h3><a href="/dds/shared">
+                <img src="{% static 'images/shared.png' %}" alt="shared">
+                Shared with me
+            </a></h3>
+        </div>
+        <div class="archive">
+            <h3><a href="/dds/archive">
+                <img src="{% static 'images/archive.webp' %}" alt="archive">
+                Archived files
+            </a></h3>
+        </div>
+        <div class="publicfolder">
+            <h3><a href="/dds/publicfolder">
+                <img src="{% static 'images/publicfolder.png' %}" alt="publicfolder">
+                Public Folders
+            </a></h3>
+        </div>
+        <div class="privatefolder">
+            <h3><a href="/dds/privatefolder">
+                <img src="{% static 'images/privatefolder.png' %}" alt="privatefolder">
+                Private Folders
+            </a></h3>
+        </div>
+        <div class="publicrepo">
+            <h3><a href="/dds/publicrepo">
+                <img src="{% static 'images/publicrepo.png' %}" alt="publicrepo">
+                Public Repositories
+            </a></h3>
+        </div>
+        <div class="privaterepo">
+            <h3><a href="/dds/privaterepo">
+                <img src="{% static 'images/privaterepo.png' %}" alt="privaterepo">
+                Private Repositories
+            </a></h3>
+        </div>
+        <div class="footer">
+            <p>All rights reserved by © Plan International Bangladesh.</p>
+        </div>
+    </div>
+    <div class="middlepart">
+        <div class="navbar">
+            <div class="Help">
+                <h2>
+                    Shared Files and Folders
+                </h2>
+            </div>
+            <img id="accountimage" src="{% static 'images/account.png' %}" onClick="accountclick()" alt="account">
+            <script src="{% static 'js/rightpartclick.js' %}"></script>
+            
+            
+        </div>
+    </div>
+    <div id="rightpanel">
+        <div class="avatar">
+            {% if user.gender == "female" %}
+                <img src="{% static 'images/account_female.png' %}" alt="account">
+            {% endif %}
+            {% if user.gender == "male" %}
+                <img src="{% static 'images/account.png' %}" alt="account">
+            {% endif %}
+
+        </div>
+        <div class="username">
+            <h3>
+                Hi, {{user.first_name}}
+            </h3>
+        </div>
+        <div class="profile">
+            <h3>
+                <a href="/profile">
+                    Profile
+                </a>
+            </h3>
+        </div>
+        <div class="logout">
+            <h3>
+                <a href="../logout">
+                    Log out
+                </a>
+            </h3>
+        </div>
+        <div class="newgroup">
+            <h3>
+                <a href="/dds/newgroup">
+                    <img src="{% static 'images/newgroup.png' %}" alt="createnewgroup">
+                        Create New Group
+                </a>
+            </h3>
+        </div>
+        <div class="settings">
+            <h3>
+                <a href="/dds/settings">
+                    <img src="{% static 'images/settings.png' %}" alt="settings">
+                        Settings
+                </a>
+            </h3>
+        </div>
+        <div class="help">
+            <h3>
+                <a href="/dds/help">
+                    <img src="{% static 'images/help.png' %}" alt="help">
+                        Help and Support
+                </a>
+            </h3>
+        </div>
+        
+    </div>
+    <script src="{% static 'js/outsideclick.js' %}"></script>
+</body>
+</html>

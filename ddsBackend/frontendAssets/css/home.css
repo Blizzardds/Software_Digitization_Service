@@ -1,0 +1,194 @@
+.body{
+    margin:0;
+    padding:0;
+    font-family: Verdana;
+}
+.leftpart{
+    background-color:#393e46;
+    width:20%;
+    height:966px;
+    float:left;
+    overflow:hidden;
+}
+.middlepart{
+    background-color:#00adb5;
+    width:80%;
+    height:966px;
+    float:left;
+    overflow:hidden;
+}
+.rightpart{
+    background-color:#87a7b3;
+    width:15%;
+    height:946px;
+    overflow:hidden;
+}
+
+
+/*Left part*/
+
+.name{
+    margin-left:27%;
+}
+.name a{
+    text-decoration:none;
+    color:white;
+}
+.searchbar{
+    margin-left:30px;
+    padding:2% 10% 2% 1%;
+    float:left;
+    margin-right:0;
+    
+}
+.searchbar input[type=text]{
+    padding: 5% 30% 3% 3%;
+}
+.searchicon{
+    overflow:hidden;
+    padding: 0 0 0 0;
+    margin-left: 0;
+    height:32px;
+    width: 32px;
+}
+.home ,.recent,.myfiles,.trash,.shared,.archive,.publicfolder,.privatefolder,
+.publicrepo,.privaterepo{
+    margin:40px 0 0 30px;
+}
+.home img,.recent img,.myfiles img,.trash img,.shared img,.archive img,
+.publicfolder img,.privatefolder img,.publicrepo img,.privaterepo img{
+    height:30px;
+    width:30px;
+    float:left;
+    margin-right:10px;
+}
+.home h3,.recent h3,.myfiles h3,.trash h3,.shared h3,.archive h3,.publicfolder h3,
+.privatefolder h3,.publicrepo h3,.privaterepo h3{
+    overflow:hidden;
+    margin: 0;
+}
+.home a,.recent a, .myfiles a,.trash a,.shared a,.archive a,.publicfolder a,
+.privatefolder a,.publicrepo a,.privaterepo a{
+    color:black;
+    text-decoration:none;
+}
+.home a:hover,.recent a:hover,.myfiles a:hover,.trash a:hover,.shared a:hover,
+.archive a:hover,.publicfolder a:hover,.privatefolder a:hover,
+.publicrepo a:hover,.privaterepo a:hover{
+    color:white;
+}
+.leftpart .footer p{
+    position:absolute;
+    left:1%;
+    bottom:0%;
+    font-size:12px;
+    color:white;
+}
+
+
+/*Middle part*/
+
+
+.middlepart{
+    float:left;
+}
+
+
+.navbar{
+    height:60px;
+    width: 100%;
+    background-color:#f6e6e4;
+}
+.navbar .upload,.navbar .newpublicfolder,
+.navbar .newprivatefolder
+{
+    margin:25px 15px 0 50px;
+}
+.navbar .upload img,.navbar .newpublicfolder img,
+.navbar .newprivatefolder img{
+    height:30px;
+    width:30px;
+    float:left;
+    margin-right:10px;
+}
+.navbar .upload h4,.navbar .newpublicfolder h4,
+.navbar .newprivatefolder h4{
+    overflow:hidden;
+    margin: 0;
+}
+.navbar .upload a,.navbar .newpublicfolder a,
+.navbar .newprivatefolder a{
+    color:black;
+    text-decoration:none;
+}
+.navbar .upload a:hover,.navbar .newpublicfolder a:hover,
+.navbar .newprivatefolder a:hover{
+    color:#5b6d5b;
+}
+.navbar .upload{
+    float:left;
+}
+.navbar .newpublicfolder{
+    float:left;
+    overflow:hidden;
+}
+.navbar .newprivatefolder{
+    float:left;
+    overflow:hidden;
+}
+.navbar #accountimage{
+    height:63px;
+    width:63px;
+    margin-left:70px;
+    float:right;
+    overflow:hidden;
+}
+.navbar #accountimage:hover{
+    cursor:pointer;
+}
+
+
+
+/* right part */
+
+
+
+#rightpanel{
+    display:none;
+    float:right;
+    width:250px;
+    height:966px;
+    position:absolute;
+    right:0%;
+    top:0%;
+    background-color:#687980;
+}
+
+#rightpanel h3{
+    margin-left:20px;
+    margin-bottom: 30px;
+}
+#rightpanel .avatar img{
+    height:150px;
+    width:150px;
+    margin-left:50px;
+}
+#rightpanel .profile a, #rightpanel .newgroup a,
+#rightpanel .settings a,#rightpanel .help a,
+#rightpanel .logout a{
+    text-decoration: none;
+    color:black;
+}
+#rightpanel .newgroup img, #rightpanel .settings img,
+#rightpanel .help img{
+    height:30px;
+    width:30px;
+    float:left;
+    margin-right:10px;
+}
+
+
+
+
+
+ 

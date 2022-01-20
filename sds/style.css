@@ -1,0 +1,74 @@
+body {
+  margin: 0 0 0 0;
+}
+.print {
+  padding: 2px;
+  margin: 0 0 0 95%;
+}
+#printbutton {
+  margin: 0 2% 0 90%;
+  padding: 10px 20px;
+  float: right;
+  overflow: hidden;
+}
+.mainheader {
+  padding: 0;
+  margin: 2% 5% 0 70%;
+}
+.sds1 {
+  margin-left: 51%;
+}
+.sds2 {
+  margin-left: 61%;
+}
+.for {
+  margin-left: 92%;
+}
+.project {
+  margin-left: 10%;
+}
+.prepared {
+  margin-left: 77%;
+}
+.tableofcontents {
+  margin-left:20%;
+  padding-top: 10%;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color: f9f3f3;
+  float: left;
+}
+.tableofcontents h2 {
+  margin: 6% 0 0 45%;
+}
+.tableofcontents h3 {
+  margin: 0;
+}
+.tableofcontents ul {
+  list-style: none;
+}
+.content {
+  margin: 25% 0 0 1%;
+}
+.box {
+  background-color: burlywood;
+  position:fixed;
+  margin-left: 1%;
+  min-width: 20%;
+  margin: 0 0 0 0;
+}
+.box ul{
+  position:absolute;
+  display: none;
+  float:none;
+  padding-bottom: 0;
+}
+.box:hover ul{
+  display: block;
+  margin-top: 0;
+  background-color: burlywood;
+  padding-right: 10%;
+}
+.toc {
+  margin: 0 0 0 3%;
+}

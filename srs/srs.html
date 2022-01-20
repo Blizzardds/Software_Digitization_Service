@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" media="all">
+    <title>SRS</title>
+</head>
+<body>
+    
+    <button id="printbutton" onclick="window.print()">Print</button>
+    <div class="mainheader">
+        <h1>
+            <div class="srs1">Software Requirements</div>
+            <div class="srs2">Specification</div>
+        </h1>
+        <h2> 
+        <div class="for">for</div>
+        </h2>
+        <h1>    
+        <div class="project">Document Digitization Service</div>
+        </h1>
+        <h3>    
+        <div class="prepared">prepared by Group-5</div> <br>
+        </h3>
+    </div>
+    <div class="tableofcontents">
+        <h2>Table of contents</h2>
+        <h3><a href="#1">1. Introduction</a></h3>
+         <ul>
+             <li><a href="#1.1">1.1 Purpose</a></li>
+             <li><a href="#1.2">1.2 Document Conventions</a></li>
+             <li><a href="#1.3">1.3 Intended Audience and Reading Suggestions</a></li>
+             <li><a href="#1.4">1.4 Product Scope</a></li>
+             <li><a href="#1.5">1.5 References</a></li>
+         </ul>
+         <a href="#2"><h3>2. Overall Description</a></h3>
+         <ul>
+             <li><a href="#2.1">2.1 Product Perspective</a></li>
+             <li><a href="#2.2">2.2 Product Functions</a></li>
+             <li><a href="#2.3">2.3 USer Classes and Characteristics</a></li>
+             <li><a href="#2.4">2.4 Operating Environment</a></li>
+             <li><a href="#2.5">2.5 Design and Implementation Constraints</a></li>
+             <li><a href="#2.6">2.6 User Documentation</a></li>
+             <li><a href="#2.7">2.7 Assumptions and Dependencies</a></li>
+         </ul>
+         <h3><a href="#3">3. External Interface Requirements</a></h3>
+         <ul>
+             <li><a href="#3.1">3.1 User Interfaces</a></li>
+             <li><a href="#3.3">3.3 Software Interfaces</a></li>
+             <li><a href="#3.4">3.4 Communications Interfaces</a></li>
+         </ul>
+         <h3><a href="#4">4. System Features</a></h3>
+         <ul>
+             <li><a href="#4.1">4.1 System Feature 1</a></li>
+             <li><a href="#4.2">4.2 System Feature 2 </a></li>
+             <li><a href="#4.3">4.1 System Feature 3</a></li>
+             <li><a href="#4.4">4.2 System Feature 4 </a></li>
+             <li><a href="#4.5">4.1 System Feature 5</a></li>
+             <li><a href="#4.6">4.2 System Feature 6 </a></li>
+         </ul>
+         <h3><a href="#5">5. Other Nonfunctional Requirements</a></h3>
+         <ul>
+             <li><a href="#5.1">5.1 Performance Requirements</a></li>
+             <li><a href="#5.2">5.2 Safety Requirements</a></li>
+             <li><a href="#5.3">5.3 Security Requirements</a></li>
+             <li><a href="#5.4">5.4 Software Quality Attributes</a></li>
+             <li><a href="#5.5">5.5 Business Rules</a></li>
+         </ul>
+         <h3><a href="#otherrequirements">6. Other Requirements</a></h3>
+         <h3><a href="#7">7. Appendix A:Glosssary</a></h3>
+         <h3><a href="#8">8. Appendix B:To Be Determined List</a></h3>
+    </div>
+    <div class="content">
+        <br><h2 id="1">1. Introduction</h2>
+        <h3 id="1.1">1.1 Purpose</h3>
+        <p>As the world is being digitized, the management system of every organization is getting digitized too. We can lose the document
+            accidentally or mistakenly so it is a good solution to digitize the documents. Now it’s a common way to do that through a good
+            system that is user friendly on every occasion for digitizing the offline documents. So, we will make a user friendly software
+            to make the existing offline documents digitized for the department of finance. The software name is document digitization service.
+            The converted digital document will be stored in the database system of the finance department and the system will be capable for
+            search and retrieval. There will be three types of user for the system, public, private and the administrators. </p>
+        <h3 id="1.2">1.2 Document Conventions</h3>
+        <p>We have maintained the standard IEEE SRS format for the whole document with the main topics in bold format where the used font size of
+            the document is 30 for topics and 18,20 for subsection of topics. The main topics will be divided into 6 sections with prefixes as 
+            well as the sub topics like 1.1, 1.2, 1.3. We have italicized the special names and technical terminologies.</p>
+        <h3 id="1.3">1.3. Intended Audience and Reading Suggestions</h3>
+        <p>The intended audience for this SRS are the project managers, administrators, developers and the Department of finance. The entire SRS 
+            is divided into 6 sections and the sections have subsections in each of them. The guidance is to read from section 1 to section 6
+            sequentially.The introductory part of the SRS is in the first section. The summary of the full project is given in the 2nd section.
+            The user, software, hardware and communication interfaces will be provided in section three. The features of the whole system will
+            be summarized in section 4 where the readers can get the ideas about the system features of the software. Section 5 holds the 
+            nonfunctional requirements and furthermore requirements of the projects will be given in section 6.
+            </p>
+        <h3 id="1.4">1.4 Product Scope</h3>
+        <p>The main purpose of the software is divided into two sections, firstly we have to maintain the software to digitize all the offline
+            documents and secondly integrate the files with the users and further functions. The department of finance will have the benefits 
+            from this software mostly because it’s easier to manage the numerous files of so many users online instead of offline paper
+            documents. Moreover, through this software system one document of different regions can be accessed quickly in some seconds where
+            offline , a document from another region could take a longer period of time to retrieve. The goal of the software is mainly to centralize
+            the whole offline system in several regions altogether so that the huge number of files and user’s documents can be managed well and
+            easily. Also, in future the new user’s documents can be stored and retrieved well and quick enough to make it easier for both the 
+            user and the department of finance. As the world is getting digitized more and more so it is high time for every big company to
+            get their documents digitized as there is a big chance to lose the files in offline management systems and it’s also a time 
+            consuming thing to do. Our software system will integrate with the new users and also with the existing users to make sure that
+            every data is managed well enough to buy the time that would be killed to get the data in the offline system. </p>
+        <h3 id="1.5">1.5 References</h3>
+        <p>1.https://krazytech.com/projects/sample-software-requirements-specificationsrs-report-airline-database<br>2.https://www.ipds.gov.in/Model_Documents/SRS_Document.pdf<br>3.http://www.cs.sjsu.edu/faculty/pollett/masters/Semesters/Fall16/harika/297-report.pdf<br>4.https://jorin.me/chatbots.pdf<br>5.http://www.forms.gov.bd/site/view/form-search/national%20id<br>6.https://www.slideshare.net/atulrockx/srs-of-3<br>7.https://chatbotsmagazine.com/how-to-document-chatbot-requirements-7df81275cc66</p>
+        <h2 id="2">2. Overall Description</h2>
+        <p>In this section, sequentially the overview of the project will be introduced to the readers. The overview includes both the web
+            application and the mobile application. It introduces how the software interacts with other systems. This section also introduces
+            the functions of the software. Here, the different sections of available functions will be introduced to the readers, like the 
+            public or private users will not have the same functions as much as available for an administrator. There will be limitations and
+            problems in the system as nothing is perfect and because of this reason the software will have revisions, tests and it will be 
+            under a huge time under maintenance so that the problems in the functionalities can be solved and so on.</p>
+        <h3 id="2.1">2.1 Product Perspective</h3>
+        <p>The software is basically for a digitization of existing documents and also for managing these data and taking new users and also
+            managing their data through integration in future. The software consists of web application and mobile application(android). 
+            The web application will be responsive for all kinds of devices and will be supported in most of the commonly used browsers like 
+            mozilla firefox, chrome, safari, opera etc. The web application will take input for documents in necessary formats and through
+            the administrator the documents will be integrated with the existing users or the new users in future. In the mobile 
+            application it will also guide the user to input the data in necessary format as per need. The mobile application will be the
+            connector between the users and the administrator panel. The department of finance will have both the platform for uploading
+            existing documents and managing them thoroughly. But the database for both the web application and the mobile application
+            will be the same.
+            </p>
+        <h3 id="2.2">2.2 Product Functions</h3>
+        <p>The functions of the software will be divided into 2 sections. 
+            1. The first sections will be performing the function of taking the input of the documents in necessary formats. The web
+            application or the mobile application will perform functions to let the user or the administrator or the department of finance
+            to upload documents. 
+            2. The second section of the software functions will be the management and the integration of the future documents with the 
+            existing documents. Both the web application and the mobile application will perform such functions that will be understandable
+            by the people who will use it. <br>The basic functions of the software are-
+            <ul>
+                <li>Taking inputs for necessary formats such as pdf.</li>
+                <li>Giving the user the ease to upload as many as files they need to upload.</li>
+                <li>Having good indexing to manage the documents for further retrieval.</li>
+                <li>Managing the connection between the database and the application.</li>
+                <li>Giving the user a good enough gesture about managing his/her profile such as uploading an avatar as the user likes,
+                     setting own username. Password etc.</li>
+            </ul>
+        </p>
+        <img src="images/diagram_2.2.jpg" alt="diagram">
+        <h3 id="2.3">2.3 User classes and characteristics</h3>
+        <p>There are three types of users of the platform. The administrator, the finance department and then the private/public users.
+            The web application and mobile application will have managed the documents that will be uploaded by the finance department
+            and the other users in future. The system will be eligible to merge and integrate the digitize the old documents with
+            the new documents. There will be certain sections and data that will be accessible to specific type of users and the 
+            respective accessibility will be managed by the administrator.
+        </p>
+        <h3 id="2.4">2.4 Operating Environment</h3>
+        <p>
+            Operating systems: Windows, Linux, Mac
+            Requirements for devices:
+                <ul>
+                    <li>Mobile: Android 10.0 or later</li>
+                    <ul>
+                        <li>Database and APIs: MySQL and Rest API</li>
+                        <li>Database API level: 29 or 30</li>
+                        <li>RAM: Minimum 1 GB</li>
+                    </ul>
+                    <li>Web: A computer with any level of specification with Windows 7,8,10, an internet connection and a modern browser.</li>
+                </ul>
+        </p>
+        <h3 id="2.5">2.5 Design and Implementation Constraints</h3>
+        <p>In our case of web application, the project has a constraint, internet connection. Without an internet connection the administrator
+            will lose the control over the application, the department of finance can’t upload documents and the other users also can’t upload
+            or see any document relative to their profile as the internet connection is necessary to keep a connection between the database
+            server and the application in order to send or receive any kind of requests. In the case of mobile application, the minimum
+            required android version is 10.0, so lower android versions might result out of the problem of installation or improper 
+            functionality. So, the internet connection and the android version is two of the constraints in the system.</br>
+            In the design, we will use our own database for all the documents to be uploaded. For security and privacy reasons, only the
+            administrator and the department of finance will have access to all the documents but the users can only view the documents they
+            will be given access to. The language of the whole system will be English.
+        </p>
+        <h3 id="2.6">2.6 User Documentation</h3>
+        <p>User’s queries, FAQ and any other necessary tutorial or help messages will be provided in the home page or in any specific section of
+             the system.
+        </p>
+        <h3 id="2.7">2.7 Assumptions and Dependencies</h3>
+        <p>One assumption is that the mobile application will be running in a mobile that has a good camera. Otherwise, it may occur that the 
+            pictures that are taken with the mobile phone will not be good enough to make everything visible in the pdf document.</br>
+            Another assumed factor is that the web application will be run in a browser that supports all the features that will exist in our system.</br>
+            There will not be any reuse of code from any source, all the functions will be provided by us.
+        </p>
+        <h2 id="3">3. External Interface Requirements</h2>
+        <h3 id="3.1">3.1 User Interfaces</h3>
+        <p>For the web application, the user interface is the main interface of the application. For general data flow the dashboard and for the communication
+            system we will have a notification panel.</br> These are some views for the users.</p>
+        </p>
+        <div class="home">
+            <img src="images/1.JPG" alt="homepage">
+        </div>
+        <div class="login">
+            <img src="images/2.JPG" alt="homepage while login">
+        </div>
+        <div class="profile">
+            <img src="images/3.JPG" alt="profile">
+        </div>
+        <div><br><br></div>
+        <h3 id="3.2">3.2 Hardware Interfaces</h3>
+        <p>Basically, we will need an internet connection with the device that we are willing to connect to the application and run it. Then we will need a
+            scanner for the computer to scan the documents and upload it and for mobile devices we will need a built-in camera for scanning the documents 
+            and uploading it. We will be needing the access to the camera from the application to use the camera for scanning. The hardware needs do not seek
+            more than the actual existing, natural components.
+        </p>
+        <h3 id="3.3">3.3 Software Interfaces</h3>
+        <p>We will be using JAVA and REST API. We will use Django, html, CSS, JAVASCRIPT and python for the web application. We will also use MySQL for
+            the database.
+        </p>
+        <h3 id="3.4">3.4 Communication Interfaces</h3>
+        <p>The database and both of the web and mobile application should be connected through an internet connection. The users, department of finance and
+            also the administrator will have to be connected to the internet to send or receive any kind of requests to the system. The internet connection
+            might be wireless, cable, satellite or cellular etc.
+        </p>
+
+        <!-- 4. System Feature begins. -->
+        <h2 id="4">4. Systems Features</h2>
+        <p>The features stated below are the core building blocks for the Document Digitization Service. Although, 
+            these are not the only features that the app contains. Other small 
+            but crucial features such as using third party authentication for login are 
+            omitted from this section due to its trivial nature.</p>
+
+        <!-- Feature 1 -->
+        <h3 id="4.1">4.1 Create/ Modify user</h3>
+        <h4>4.1.1 Description and Priority</h4>
+        <p>
+            The administrator will have the power to create or modify an user. <br>
+            Priority: High
+        </p>
+        <ul>
+            <li>Benefit- 9
+             </li>
+            <li>Cost- 8
+            </li>
+            <li>Risk- 6
+             </li>
+            <li>Penalty: 7
+         </li>
+        </ul>
+        <h4>4.1.2 Stimulus/Response Sequences</h4>
+        <p>The response sequences between the actor actions and the system responses will be shown by the following expanded use case diagram.
+        </p>
+        <ul>
+            <li>Use Case name: Create/Modify User
+ 
+             </li>
+            <li>Actor: Administrator
+            </li>
+            <li>Type: Primary.
+             </li>
+            <li>Overview: A new user is given access to specific criteria and role or role of any existing user is modified. 
+         </li>
+        </ul>
+        <p> <strong>User Creation:</strong> </p>
+        <table >
+            <tr>
+                <th>Actor Actions</th>
+                <th>System Response</th>
+            </tr>
+            <tr>
+                <td>1. Creates a new user with username and password.</td>
+                <td>2. Asks the administrator about the roles to be given to the new user.</td>
+            </tr>
+            <tr>
+                <td>3. Administrator sets the role for the new user. </td>
+                <td>4. Saves the data in database for the new user and notifies the user through email. </td>
+            </tr>
+        </table>
+        <table >
+            <tr>
+                <th>Actor Actions</th>
+                <th>System Response</th>
+            </tr>
+            <p> <strong>User Modification:</strong> </p>
+            <tr>
+                <td>1. Enters into the modification panel for n user (n = number of users). </td>
+                <td>2. Asks the admin what are the criteria the administrator wants to change. </td>
+            </tr>
+            <tr>
+                <td>3. Admin selects the criteria and make the changes.</td>
+                <td>4. Changes are saved in database and a pop-up window will show the notification that the changes have been saved.</td>
+            </tr>
+        </table>
+
+        <p>
+             <br>
+            <strong>Alternate Course of Action: </strong>
+            
+        </p>
+        <table >
+            <tr>
+                <th>Problems</th>
+                <th>Course of Actions</th>
+            </tr>
+            <tr>
+                <td>1. System could not save the changes in the database while creating of modifying user.</td>
+                <td>Checks the internet connection and try again to save the changes in 10 seconds if the internet connection is stable.
+                    If the problem still remains then notifies the administrator through a pop-up window that the system could not make the changes and to try again in a few minutes.
+                    </td>
+            </tr>
+
+        </table>
+        <h4>4.1.3 Functional Requirement</h4>
+        <table >
+            <tr>
+                <th>Requirement Code</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    REQ-1
+                </td>
+                <td>Make the changes in the database and in application in 10 seconds and notify the administrator if or if not the changes have been saved.</td>
+                
+            </tr>
+            <tr>
+                <td>REQ-2</td>
+                <td>Database/server should be on 24/7</td>
+            </tr>
+            <tr>
+                <td>REQ-3</td>
+                <td>Stable internet connection</td>
+            </tr>
+        </table><br><br>
+
+       
+
+        
+
+    <!-- Feature 2 -->
+    <br><br><h3 id="4.2">4.2 Scan & Upload Documents</h3>
+    <h4>4.2.1 Description and Priority</h4>
+    <p>
+        All the data from the documents will be scanned and then extracted and stored in the database with proper indexing. <br>
+        Priority: MEDIUM
+    </p>
+    <ul>
+        <li>Benefit- 9
+        </li>
+        <li>Cost- 8
+        </li>
+        <li>Risk- 5
+        </li>
+        <li>Penalty: 7
+    </li>
+    </ul>
+    <h4>4.2.2 Stimulus/Response Sequences</h4>
+    <p>The response sequences between the actor actions and the system responses will be shown by the following expanded use case diagram.
+    </p>
+    <ul>
+        <li>Use Case name: Scan and Upload  the Documents.
+
+        </li>
+        <li>Actor: Manager, Employees.
+        </li>
+        <li>Type: Primary.
+        </li>
+        <li>Overview: Allow all users to Scan and Upload  the Documents in the database. 
+    </li>
+    </ul>
+    <p> <strong>Typical Course of Actions:</strong> </p>
+    <table >
+        <caption>Table 2.0: Typical course of events.</caption>
+        <tr>
+            <th>Actor Actions</th>
+            <th>System Response</th>
+        </tr>
+        <tr>
+            <td>1. Open the navigation bar.
+            </td>
+            <td>2. System will show the Navigation bar that will have the option Scan the document.</td>
+        </tr>
+        <tr>
+            <td>3. Capture the image. </td>
+            <td>4. System will scan the image and always  give an option to continue capturing the image to scan or upload the scanned images. </td>
+        </tr>
+        <tr>
+            <td>5. Choose to capture more images. </td>
+            <td>6. System will repeat number 4 response. </td>
+        </tr>
+        <tr>
+            <td>7. Tap to upload.</td>
+            <td>8. System will ask if it is a public or private document.</td>
+
+        </tr>
+        <tr>
+            <td>9.  Select the preferred option.</td>
+            <td>10. System will upload the documents according to their given option in the database. </td>
+        </tr>
+        
+
+    </table>
+    <p>
+        <br>
+        <strong>Alternate Course of Action: </strong>Refer to table 2.0. 
+        
+    </p>
+    <table>
+        <caption>Table 2.1: Alternate course of action.</caption>
+        <tr>
+            <th>Problems</th>
+            <th>Course of Actions</th>
+        </tr>
+        <tr>
+            <td>1. Unable upload the documents due to poor captured images.</td>
+            <td>System will show a message “ Your image quality is bad” and redirect to an option to upload the documents again.</td>
+        </tr>
+        <tr>
+            <td>2. Unable to upload documents due to poor internet connection. </td>
+            <td>System will store the information of documents in cache to upload it later when there will be a stable internet connection and give a
+                message “ Your document will be uploaded later when there will be a stable connection ”.</td>
+        </tr>
+    </table>
+    <h4>4.2.3 Functional Requirement</h4>
+    <table>
+        <caption>Table 2.2: Functional requiremnt. </caption>
+        <tr>
+            <th>Requirement Code</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>
+                REQ-4
+            </td>
+            <td>Scan documents in 5 seconds.</td>
+            
+        </tr>
+        <tr>
+            <td>REQ-5</td>
+            <td>Stable internet connection.</td>
+        </tr>
+    </table>
+ 
+    <!-- Feature 3 -->
+    <h3 id="4.3">4.3 Backup the System</h3>
+    <h4>4.3.1 Description and Priority</h4>
+    <p>
+        There will be a mechanism that will allow the administrators to backup the system with their own customized criteria.<br>
+        <strong>Priority: </strong>MEDIUM.
+    </p>
+    <ul>
+        <li>Benefit- 9 
+        </li>
+        <li>Cost- 8
+        </li>
+        <li>Risk- 5
+        </li>
+        <li>Penalty: 7
+        </li>
+    </ul>
+    <h4>4.3.2 Stimulus/Response Sequences</h4>
+    <p>The response sequences between the actor actions and the system responses will be shown by the following expanded use case diagram.
+    </p>
+    <ul>
+        <li>Use Case Name: Keep Backup the System. 
+        </li>
+        <li>Actor: Administrator.
+        </li>
+        <li>Type: Primary.
+        </li>
+        <li>Overview: Allow the administrator to backup the system.
+        </li>
+    </ul>
+    <p> <strong>Typical Course of Actions:</strong> </p>
+    <table>
+        <caption>Table 3.0: Typical course of events.</caption>
+        <tr>
+            <th>Actor Actions</th>
+            <th>System Response</th>
+        </tr>
+        <tr>
+            <td>1. Open the navigation bar.
+            </td>
+            <td>2. System will show the Navigation bar that will have many options including settings.</td>
+        </tr>
+        <tr>
+            <td>3. Click settings.</td>
+            <td>4. System will redirect to the settings where an option named backup will appear including other options.</td>
+        </tr>
+        <tr>
+            <td>5. Click  backup system. </td>
+            <td>6. System will redirect to the backup criteria.</td>
+
+        </tr>
+        <tr>
+            <td>7. Select the backup criteria and click backup.</td>
+            <td>8. System will accept backup criteria and take backup according to the given criteria.</td>
+        </tr>
+
+    </table>
+    <p> <strong>Alternate Course of Actions: </strong>Refers to Table 3.0</p>
+    <table>
+        <caption>Table 3.1: Alternate course of action.</caption>
+        <tr>
+            <th>Problem</th>
+            <th>Course of Actions</th>
+        </tr>
+        <tr>
+            <td>1. Unable to backup the system due to inserting any invalid criteria or having short of storage.</td>
+            <td>System shows “ Unable to take backup due to any invalid criteria or short of storage, please try again”.</td>
+
+        </tr>
+        <tr>
+            <td>2. System backup failure due to poor internet connection.</td>
+            <td>System will try to reconnect, after several attempts it will show an error message “Your internet connection is not stable, 
+                We will take the backup when we have an stable internet connection ”. 
+                System will store the selected criteria for backup in cache to backup it later.
+            </td>
+
+        </tr>
+    </table>
+    <h4>4.3.3 Functional Requirement</h4>
+    <table>
+        <caption>Table 3.2: Functional requirement.</caption>
+        <tr>
+            <th>Requirement Code </th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>REQ-6</td>
+            
+            <td>Must have a stable internet connection. </td>
+        </tr>
+        <tr>
+            <td>REQ-7</td>
+            <td>TBD</td>
+        </tr>
+    </table>
+
+    <!-- Feature 4 -->
+    <h3 id="4.4">4.4 Search Documents</h3>
+    <h4>4.4.1 Description and Priority</h4>
+    <p>
+        Any user can search for his/her required documents by directly search the content of documents or any other parameter. <br>
+        <strong>Priority: </strong>HIGH
+    </p>
+    <ul>
+        <li>Benefit- 9 
+        </li>
+        <li>Cost- 8
+        </li>
+        <li>Risk- 7
+        </li>
+        <li>Penalty: 8
+        </li>
+    </ul>
+    <h4>4.4.2 Stimulus/Response Sequences</h4>
+    <p>The response sequences between the actor actions and the system responses will be shown by the
+        following expanded use case diagram.
+    </p>
+    <ul>
+        <li>Use Case Name: Search the documents. 
+        </li>
+        <li>Actor: Administrator, Manager, Employees.
+        </li>
+        <li>Type: Primary.
+        </li>
+        <li>Overview: Allow all users to search their required documents.
+        </li>
+    </ul><br><br><br><br><br>
+    <br><p><strong>Typical Course of Actions:</strong> </p>
+    <table>
+        <caption>Table 4.0: Typical course of events.</caption>
+        <tr>
+            <th>Actor Actions</th>
+            <th>System Response</th>
+        </tr>
+        <tr>
+            <td>1. Open the navigation bar.
+            </td>
+            <td>2. System will show the Navigation bar that will have many options including search.</td>
+        </tr>
+        <tr>
+            <td>3. Click the search button and write what needed to be searched as a parameter.</td>
+            <td>4. System will search for the document and show all the possible documents that match the parameter.</td>
+        </tr>
+    </table>
+    <p>Alternate Course of Actions: Refers to table 4.0</p>
+    <table>
+        <caption>Table 4.1 Alternate course of action.</caption>
+        <tr>
+            <th>Problem</th>
+            <th>Course of Action</th>
+        </tr>
+        <tr>
+            <td>1. Unable to find the documents for the given parameter due to the unmatched parameter.</td>
+            <td>System will show the message “Nothing found !”.</td>
+        </tr>
+        <tr>
+            <td>2. Unable process the searching function because of an unstable internet connection.</td>
+            <td>System will show the message “Oops you have an unstable connection”.</td>
+        </tr>
+    </table>
+    <h4>4.4.3 Functional Requirement</h4>
+    <table>
+        <tr>
+            <th>Requirement Code</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>REQ-8</td>
+            <td>Load data instantly from the database.</td>
+
+        </tr>
+        <tr>
+            <caption>Table 4.2 Functional requirement.</caption>
+            <td>REQ-9</td>
+            <td>Stable Internet Connection.</td>
+        </tr>
+    </table>
+    
+    <!-- Feature 5 -->
+    <h3 id="4.5">4.5 Manage/ Modify Documents</h3>
+    <h4>4.5.1 Description and Priority</h4>
+    <p>
+        The administrator, manager, private users who have been given access to will be able to manage the files by grouping and also edit, rename, delete the document.  <br>
+        Priority: High
+    </p>
+    <ul>
+        <li>Benefit- 7
+        </li>
+        <li>Cost- 7
+        </li>
+        <li>Risk- 6
+        </li>
+        <li>Penalty: 6
+    </li>
+    </ul>
+    <h4>4.5.2 Stimulus/Response Sequences</h4>
+    <p>The expanded use case here shows the response sequences between the actor actions and system responses.
+    </p>
+    <ul>
+        <li>Use Case name: Manage/Modify documents
+
+        </li>
+        <li>Actor: Administrator, manager, private users
+        </li>
+        <li>Type: primary
+        </li>
+        <li>Overview: Gives the actor the permission to manage the documents and modifying the documents. 
+    </li>
+    </ul>
+    <table>
+        <tr>
+            <th>Actor Actions</th>
+            <th>System Response</th>
+        </tr>
+        <tr>
+            <td>1. Gives a command to change anything in any data as edit, rename, delete or group the documents with any parameter. </td>
+            <td>2. The system will ask the actor if he is sure about the changes.</td>
+        </tr>
+        <tr>
+            <td>3. The actor will press yes or no as his need. </td>
+            <td>4. The system will make the changes, show the actor the changes have been made, through a pop-up window and also make the changes
+                in database is the actor presses yes. The system will not do anything if the actor presses no.
+            </td>
+        </tr>
+    </table>
+    
+    <table>
+        <caption>Alternate course of action.</caption>
+        <tr>
+            <th>Problems</th>
+            <th>Course of Actions</th>
+        </tr>
+        <tr>
+            <td>1. The changes in the documents could not be done.</td>
+            <td>2. Checks the internet connection and try again to save the changes in 10 seconds if the internet connection is stable.
+                If the problem still remains then notifies the owner of the document through a notification that the system could not make the changes.
+                
+                If the internet connection is not stable then saves the changed data as cache and make the changes in database the next time a stable 
+                network connection is build, also notifies the administrator about this action.                 
+            </td>
+        </tr>
+
+    </table><br><br>
+    <h4>4.5.3 Functional Requirement</h4>
+    <table>
+        <caption>Functional requiremnt. </caption>
+        <tr>
+            <th>Requirement Code</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>
+                REQ-10
+            </td>
+            <td>Archive the documents in database in 10 seconds.</td>
+        </tr>
+        <tr>
+            <td>REQ-11</td>
+            <td>Database/server should be on 24/7</td>
+        </tr>
+        <tr>
+            <td>REQ-12</td>
+            <td>Stable internet connection</td>
+        </tr>
+    </table>
+
+
+
+    <!-- Feature 6 -->
+    <h3 id="4.6">4.6 Archiving feature</h3>
+    <h4>4.6.1 Description and Priority</h4>
+    <p>
+        Any existing file or whole folder of files will be archived automatically by the system after the time set by the administrator for any file or any user for his/her accessible file.  <br>
+        Priority: Medium
+    </p>
+    <ul>
+        <li>Benefit- 6
+        </li>
+        <li>Cost- 5
+        </li>
+        <li>Risk- 4
+        </li>
+        <li>Penalty: 5
+    </li>
+    </ul>
+    <h4>4.6.2 Stimulus/Response Sequences</h4>
+    <p>The expanded use case here shows the response sequences between the actor actions and system responses.
+    </p>
+    <ul>
+        <li>Use Case name: Archive documents
+
+        </li>
+        <li>Actor: System
+        </li>
+        <li>Type: secondary
+        </li>
+        <li>Overview: Archives the specific documents or folder after the set time for expiring ends. 
+    </li>
+    </ul>
+    <table>
+        <tr>
+            <th>Actor Actions</th>
+            <th>System Response</th>
+        </tr>
+        <tr>
+            <td>1. Archives the documents after the time of expire passes. </td>
+            <td>2. The documents that have been selected to archive will be separated from the other data and stored in the archived section.</td>
+        </tr>
+    </table>
+    
+    <table>
+        <caption>Alternate course of action.</caption>
+        <tr>
+            <th>Problems</th>
+            <th>Course of Actions</th>
+        </tr>
+        <tr>
+            <td>1. The archiving process could not be done.</td>
+            <td>2. Checks the internet connection and try again to save the changes in 10 seconds if the internet connection is stable.
+                If the problem still remains then notifies the owner of the document through a notification that the system could not make the changes and 
+                to try again in a few minutes.                      
+            </td>
+        </tr>
+
+    </table>
+    <h4>4.6.3 Functional Requirement</h4>
+    <table>
+        <caption>Functional requiremnt. </caption>
+        <tr>
+            <th>Requirement Code</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>
+                REQ-13
+            </td>
+            <td>Archive the documents in database in 10 seconds.</td>
+        </tr>
+        <tr>
+            <td>REQ-14</td>
+            <td>Database/server should be on 24/7</td>
+        </tr>
+        <tr>
+            <td>REQ-15</td>
+            <td>Stable internet connection</td>
+        </tr>
+    </table>
+    <!-- End of system Feature -->
+
+    <h2 id="5">5. Other Nonfunctional Requirements</h2>
+    <h3 id="5.1">5.1 Performance Requirements </h3>
+    <p>
+        No page shall take more than 2 seconds to access with only one user online .
+        The general Accounts with 3 failed login attempts should block.then  reset of password should be done by the assigned administrator using the 
+        administration panel. If there is no functional  change in system in a time of 15 minutes should automatically log out.The system ought to have 
+        an advanced content search which will search optical character recognition (ocr) of the scanned documents
+    </p>
+    <h3 id="5.2">5.2 Safety Requirements</h3>
+    <p>
+        The system will be capable of using Google Login or Active Directory as login authentication. so that if data is lost due to the user deciding to change devices or if the user's device is extensively damaged then it will save data in google cloud.
+    </p><br><br>
+    <h3 id="5.3">5.3 Security Requirements</h3>
+    <p> 
+        <br>1. Data from the database will never be transmitted to unauthenticated sources.</li>
+        <br>2. The system will never disclose administrator information to users that are (specific roles such as the employee of the finance department )not authorized to see it.</li>
+        <br>3. The user accounts have only alpha and numeric keys that are allowed in the username and password field.</li>
+        <br>4. The database must be encrypted at rest.
+    </p>
+    <h3 id="5.4">5.4  Software Quality Attributes</h3>
+        
+    <br><strong>Adaptability:</strong> Database is normalized so  that user can easily understand the functions of the system or not.<br>
+    <br><strong>Availability :</strong> As the system will be hosted in cloud servers it will be available all the time for users the web application will be available for 24/7 hours.<br>
+
+    <br><strong> Correctness:</strong>  The system will pull appropriate information from the original document  and  use OCR  to provide accurate information based on the users request- upload document ,update.the original files never be replaceable.<br>
+    <br><strong>Maintainability :</strong>  The system increases the software maintainability by reducing its complexity. keeping the server protected and updated  before something goes wrong. have a much larger memory capacity than a regular system because they have more RAM. Having more memory, requires having higher quality parts to support that high storage capacity.<br>
+
+    <br><strong>Flexibility:</strong>The application has more functions,make it flexible. like the system will upload new files,update,search previous files, and have no limits in the index field. The system ought to search data such as index, filename, date, author name, uploader name.the system can Scan ning, indexing, unfastening and refastening, Scanned images will be saved using the industry standards version.<br>
+    <br> <strong>Reliability : </strong>the software system offers administrators enterprise control over system configuration and application settings – all in a dashboard that you can use to streamline authentication, asset protection, and operational control. 
+    <br>
+    <br><strong> Portability :</strong>The server is operable for Windows, Linux, Mac. Specification Mobile device : Android 10.0 or later.<br>
+    <br> <strong>Testability : </strong> It can be defined as the property that measures the ease of testing a piece of code or functionality, or a provision added in software so that test plans and scripts can be executed systematically.the basic function works properly or not as login, create new group folder, scanning document, Uploading of digitized records into a defined storage area.<br>
+    <br> <strong>Usability :</strong> If the application will be used only by the user department of finance only by some
+    laws and transactions.
+    <br>
+    <h3 id="5.5"> 5.5 Business Rules </h3>
+    <p> A business rule is a constraint of the business itself that may guide system development.our system often involves very specific criteria or conditions for compliance.
+    </p>
+    <ul>
+        <li>As the user has a valid identity as a member of finance department and has completed the application form correctly by the Administrator. then he can log in to the service.
+        </li>
+        <li>Administrator can access the employee information and their uploaded data, will able to edit, remove some user id. Ensure valid information.
+        </li>
+        <li>The specific group manager will able to control their group employees members information , shared documents, and authorized dashboard history.
+        </li>
+        <li>The employee can login by specific rules and use the service to digitize data
+        </li>
+    </ul>
+    <h2 id="6"> 6. Other Requirements</h2>
+       
+        <p>Database Requirement: There will be use of a relational DBMS to store and manage all the data of the system.</p>
+        
+    <h2 id="7">Appendix A: Glossary</h2>
+        <p>
+            We wish to build a separate glossary that spans multiple projects or the entire organization, and just include terms specific to a single project in each SRS.& gt;
+        </p>
+        <br>1 SRS: Software Requirement Specification is a detailed description of a software system to be developed with its functional and non-functional requirements. <br>
+        <br>2. DBMS:A database management system (DBMS) is a software package designed to define, manipulate, retrieve and manage data in a database.<br>
+        <br>3. OCR:Optical Character Recognition. It is a technology that recognizes text within a digital image.<br>
+        <br>4. Administrator: they are the most powerful users and authorized the other user interfaces.<br>
+        <br>5. Website Wireframe: A visual guide that represents the framework of a website.<br>
+        <br>6. HTML (Hypertext Markup Language) Standard markup language for creating web pages and web applications.<br>
+        <br>7. Digitization: Digitization is the process of converting information into a digital (i,e computer readable format). <br>
+    <h2 id="8">Appendix B: To Be Determined List</h2>
+    <p>This appendix documents the following major TBDs:</p>    
+    <ul>
+        <li>Add direct new user including their information.</li>
+        <li>Group members.</li>
+        <li>Remove unnecessary GUI information.</li>
+        <li>Add unique performance price to use the server.</li>
+        <li>Require the reading of the user agreement as part of registration.</li>
+    </ul>    
+
+    </div>
+</body>
+</html>

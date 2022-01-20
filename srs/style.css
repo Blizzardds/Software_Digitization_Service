@@ -1,0 +1,67 @@
+body{
+    margin:1% 1% 0 0 ;
+}
+.print{
+    padding:2px;
+    margin:0 0 0 95%;
+}
+#printbutton{
+    margin:0 2% 0 90%;
+    padding: 10px 20px;
+}
+.mainheader{
+    padding:0;
+    margin:0 15% 0 60%;
+}
+.srs1{
+    margin-left:30% ;
+}
+.srs2{
+    margin-left: 61%;
+}
+.for{
+    margin-left: 92%;
+}
+.project{
+    margin-left: 10%;
+}
+.prepared{
+    margin-left: 77%;
+}
+.tableofcontents{
+    margin:0 0 0 10%;
+    background-color: f9f3f3;
+}
+.tableofcontents .h2{
+    margin:6% 0 0 45%;
+}
+.tableofcontents h3{
+    margin:0;
+}
+.tableofcontents ul{
+    list-style:none
+}
+.content{
+    margin: 3% 0 0 2%;
+}
+.home{
+    overflow:hidden ;
+    float:left;
+}
+.login{
+    float:left;
+    overflow:hidden ;
+}
+img {
+    height:500px;
+    margin-left:0;
+}
+table{
+    width:95%;
+    border: 1px solid black;
+
+}
+th, td{
+    width:50%;
+    border: 1px solid black;
+}
